@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Bottom Sheet</string>
+    <string name="item_name">abcd</string>
+    <string name="item_desc">abcd</string>
+    <string name="str">hello world</string>
+    <string name="trigger_button_title">show</string>
 </resources>

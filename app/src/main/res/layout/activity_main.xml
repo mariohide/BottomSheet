@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:elevation="0dp"
         android:stateListAnimator="@null"
-        android:text="show/hide"
+        android:text="@string/trigger_button_title"
         android:translationZ="0dp"
         tools:ignore="UnusedAttribute" />
 
@@ -20,7 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="200dp"
-        android:text="hello world" />
+        android:text="@string/str"
+        android:layout_marginStart="200dp" />
 
     <FrameLayout
         android:id="@+id/fl_sheet"
@@ -41,7 +42,8 @@
             android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
 
             <ImageView
                 android:paddingTop="16dp"
@@ -50,7 +52,8 @@
                 android:layout_height="200dp"
                 android:layout_marginBottom="-190dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/img" />
+                android:src="@drawable/img"
+                tools:ignore="ContentDescription" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"

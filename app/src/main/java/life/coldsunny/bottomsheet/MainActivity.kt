@@ -1,5 +1,6 @@
 package life.coldsunny.bottomsheet
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -36,6 +37,11 @@ class MainActivity : AppCompatActivity() {
         mRecyclerView.layoutManager = LinearLayoutManager(this)
         val adapter = MyAdapter(dataList)
         mRecyclerView.adapter = adapter
+        adapter.setOnItemClickListener(object : MyAdapter.OnItemClickListener {
+            override fun oItemClick(position: Int, bean: Bean) {
+                this@MainActivity.startDetailActivity(bean.name)
+            }
+        })
 
         mBottomSheetBehavior = BottomSheetBehavior.from(mFlSheet)
         mBottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN

@@ -9,11 +9,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import life.coldsunny.bottomsheet.MyAdapter.ViewHolder
 
-class MyAdapter(private val dataList: List<Bean>) : RecyclerView.Adapter<ViewHolder>() {
+class MyAdapter(val dataList: List<Bean>) : RecyclerView.Adapter<ViewHolder>() {
+    private lateinit var listener: OnItemClickListener
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvName = itemView.findViewById<TextView>(R.id.tv_name)
-        val tvDesc = itemView.findViewById<TextView>(R.id.desc)
+        val tvName: TextView = itemView.findViewById(R.id.tv_name)
+        val tvDesc: TextView = itemView.findViewById(R.id.desc)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,6 +30,19 @@ class MyAdapter(private val dataList: List<Bean>) : RecyclerView.Adapter<ViewHol
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tvName.text = dataList[position].name
         holder.tvDesc.text = dataList[position].desc
+        holder.itemView.setOnClickListener { v ->
+            listener.oItemClick(
+                position,
+                dataList[position]
+            )
+        }
     }
 
+    interface OnItemClickListener {
+        fun oItemClick(position: Int, bean: Bean)
+    }
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.listener = listener
+    }
 }

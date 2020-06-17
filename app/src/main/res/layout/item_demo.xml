@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
@@ -11,7 +10,7 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="abcd"
+        android:text="@string/item_name"
         android:textColor="#009688"
         android:textSize="24sp" />
 
@@ -19,7 +18,7 @@
         android:id="@+id/desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="abcd"
+        android:text="@string/item_desc"
         android:textColor="#4CAF50"
         android:textSize="14sp" />
 </LinearLayout>
